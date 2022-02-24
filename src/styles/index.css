@@ -5,6 +5,10 @@ body{
     background-color: aqua;
 }
 
+nav ul li{
+    list-style: none;
+    text-align: center;
+}
 .fotoModelo {
     background-color: aquamarine;
     position: absolute;
@@ -23,3 +27,4 @@ body{
     top: 52px;
     right: 16px;
   }
+
