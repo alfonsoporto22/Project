@@ -5,5 +5,21 @@ body{
     background-color: aqua;
 }
 
-.items{
-}
+.fotoModelo {
+    background-color: aquamarine;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  .fotoPrecio {
+    background-color: aquamarine;
+    position: absolute;
+    top: 30px;
+    right: 16px;
+  }
+  .fotoKm {
+    background-color: aquamarine;
+    position: absolute;
+    top: 52px;
+    right: 16px;
+  }
