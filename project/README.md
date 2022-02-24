@@ -10,7 +10,8 @@
 
 ## 2.	Descripción
 ```markdown
-    Aplicación que muestre a los clientes listado de vehículos disponibles para compra o alquiler y los que estén de oferta. Además estará conectado a una base de datos  para que el personal del concesionario tenga un registro de los datos de los coches, datos de persona que tiene alquilado el coche, etc.
+    Aplicación que muestre a los clientes listado de vehículos disponibles para compra o alquiler y los que estén de oferta. 
+    Además estará conectado a una base de datos  para que el personal del concesionario tenga un registro de los datos de los coches, datos de persona que tiene alquilado el coche, etc.
 ```
 ## 3.	Necesidad que soluciona
 ```markdown
