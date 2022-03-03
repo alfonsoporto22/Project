@@ -26,15 +26,24 @@
     Vista de móvil (mobile first):
 ```
 
-Vista 
-movil:                                                                            
+Vista movil Cliente:                                                                            
 
-![Alt text](Movil.PNG)
+![Alt text](ClienteMovil1.PNG)
+![Alt text](ClienteMovil2.PNG)
+![Alt text](ClienteMovil3.PNG)
 
-Vista escritorio: 
 
-![Alt text](Escritorio.PNG)
+Vista escritorio Cliente: 
 
+![Alt text](ClienteEscritorio1.PNG)
+![Alt text](ClienteEscritorio2.PNG)
+![Alt text](ClienteEscritorio3.PNG)
+
+Vista escritorio Concesionario:
+
+![Alt text](ConcesionarioEscritorio1.PNG)
+![Alt text](ConcesionarioEscritorio2.PNG)
+![Alt text](ConcesionarioEscritorio3.PNG)
 
 ## 6.	MVP - Producto mínimo viable.
 ```markdown
