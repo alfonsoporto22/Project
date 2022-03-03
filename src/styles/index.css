@@ -1,6 +1,9 @@
 .d-block{
     height: 300px;
 }
+.card-img{
+  height: 300px;
+}
 
 nav ul li{
     list-style: none;
