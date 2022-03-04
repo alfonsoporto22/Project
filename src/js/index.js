@@ -29,11 +29,11 @@ const vehiculos = [
     }
 ]
 
-const RUTA_INICIAL ="img/";
+const RUTA_INICIAL = "img/";
 
 function dataHTML(marca, modelo, precio, km, img, portada) {
     let portadaHTML = portada ? "active" : "";
-    let urlImg=RUTA_INICIAL+img;
+    let urlImg = RUTA_INICIAL + img;
     const taskHTML = `
     <div class="carousel-item ${portadaHTML}">
                       <div class="card bg-dark text-white">
@@ -65,18 +65,28 @@ function insertTasksHTML(taskArray, element) {
 
 taskListHTML(vehiculos);
 
-let vehiculosVenta=[];
-let vehiculosAlquiler=[];
+let vehiculosEleccion = []
 
-//TODO: Hacer función para pedirle que sea venta o alquiler
-for (let i=0;i<vehiculos.length;i++){
-    if (vehiculos[i].venta){
-        vehiculosVenta.push(vehiculos[i]);
-    }else{
-        vehiculosAlquiler.push(vehiculos[i]);
+/**
+ * Función que segrega los vehiculos en función si están en venta o alquiler
+ * en un nuevo array
+ * @param {Array} vehiculos - Array con todos los vehículos
+ * @param {boolean} venta - Booleano, si es true=venta, si 
+ * @returns vehiculosEleccion
+ */
+function segregateVehicule(vehiculos, tipoVenta) {
+
+    for (let i = 0; i < vehiculos.length; i++) {
+        if (vehiculos[i].venta==tipoVenta) {
+            vehiculosEleccion.push(vehiculos[i]);
+        }
     }
+    console.log(vehiculosEleccion);
+    return vehiculosEleccion;
 }
 
-console.log(vehiculosVenta[0]);
+const vehnuevo= segregateVehicule(vehiculos,false);
+console.log(vehnuevo);
 
-window.addEventListener('load', insertTasksHTML(vehiculos, "#ofertasVenta"))
+
+window.addEventListener('load', insertTasksHTML(vehnuevo, "#ofertasVenta"));
