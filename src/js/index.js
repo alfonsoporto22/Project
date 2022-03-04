@@ -6,7 +6,8 @@ const vehiculos = [
         precio: "12.900 €",
         km: "5000 km",
         img: "opelAstra.jpg",
-        portada: true
+        portada: true,
+        venta: true
     },
     {
         marca: "Ford",
@@ -14,7 +15,8 @@ const vehiculos = [
         precio: "15.900 €",
         km: "8500 km",
         img: "fordMondeo.jpg",
-        portada: false
+        portada: false,
+        venta: true
     },
     {
         marca: "Peugeot",
@@ -22,15 +24,16 @@ const vehiculos = [
         precio: "8.900 €",
         km: "2500 km",
         img: "peugeotPartner.jpg",
-        portada: false
+        portada: false,
+        venta: false
     }
 ]
 
-
+const RUTA_INICIAL ="img/";
 
 function dataHTML(marca, modelo, precio, km, img, portada) {
     let portadaHTML = portada ? "active" : "";
-    let urlImg="img/"+img;
+    let urlImg=RUTA_INICIAL+img;
     const taskHTML = `
     <div class="carousel-item ${portadaHTML}">
                       <div class="card bg-dark text-white">
@@ -61,5 +64,19 @@ function insertTasksHTML(taskArray, element) {
 }
 
 taskListHTML(vehiculos);
+
+let vehiculosVenta=[];
+let vehiculosAlquiler=[];
+
+//TODO: Hacer función para pedirle que sea venta o alquiler
+for (let i=0;i<vehiculos.length;i++){
+    if (vehiculos[i].venta){
+        vehiculosVenta.push(vehiculos[i]);
+    }else{
+        vehiculosAlquiler.push(vehiculos[i]);
+    }
+}
+
+console.log(vehiculosVenta[0]);
 
 window.addEventListener('load', insertTasksHTML(vehiculos, "#ofertasVenta"))
