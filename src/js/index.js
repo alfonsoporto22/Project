@@ -19,6 +19,33 @@ const vehiculos = [
         venta: true
     },
     {
+        marca: "Ford",
+        modelo: "Mondeo",
+        precio: "15.900 €",
+        km: "8500 km",
+        img: "fordMondeo.jpg",
+        portada: false,
+        venta: true
+    },
+    {
+        marca: "Ford",
+        modelo: "Mondeo",
+        precio: "15.900 €",
+        km: "8500 km",
+        img: "fordMondeo.jpg",
+        portada: false,
+        venta: true
+    },
+    {
+        marca: "Ford",
+        modelo: "Mondeo",
+        precio: "15.900 €",
+        km: "8500 km",
+        img: "fordMondeo.jpg",
+        portada: false,
+        venta: true
+    },
+    {
         marca: "Peugeot",
         modelo: "Partner",
         precio: "8.900 €",
@@ -57,10 +84,41 @@ function taskListHTML(taskArray) {
     }
     return HTMLtext
 }
+/**
+ * Función que dependiendo del número de botones introducidos devuelve una cantidad 
+ * de botones
+ * @param {int} boton - Número de botones a introducir
+ * @returns Texto HTML 
+ */
+function botonHTML(boton) {
+    let HTMLtext = `
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      `;
+    if (boton>1){
+        for(let i=1;i<boton;i++){
+            HTMLtext+=`
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${i+1}"></button>
+            `;
+        }
+    }
+    return HTMLtext
+}
+
+console.log(botonHTML(5));
 
 function insertTasksHTML(taskArray, element) {
     const div = document.querySelector(element);
     div.innerHTML = taskListHTML(taskArray);
+}
+/**
+ * Función que selecciona un elemento del html e invoca 
+ * a otra función para indicarle cuantos botones queremos introducir
+ * @param {int} boton - Número de botones a insertar
+ * @param {string} element - Elemento html donde quiero insertar los botones 
+ */
+function insertButtoms(boton, element) {
+    const div = document.querySelector(element);
+    div.innerHTML =botonHTML(boton);
 }
 
 taskListHTML(vehiculos);
@@ -77,7 +135,7 @@ let vehiculosEleccion = []
 function segregateVehicule(vehiculos, tipoVenta) {
 
     for (let i = 0; i < vehiculos.length; i++) {
-        if (vehiculos[i].venta==tipoVenta) {
+        if (vehiculos[i].venta == tipoVenta) {
             vehiculosEleccion.push(vehiculos[i]);
         }
     }
@@ -85,8 +143,10 @@ function segregateVehicule(vehiculos, tipoVenta) {
     return vehiculosEleccion;
 }
 
-const vehnuevo= segregateVehicule(vehiculos,false);
+const vehnuevo = segregateVehicule(vehiculos, true);
 console.log(vehnuevo);
 
 
 window.addEventListener('load', insertTasksHTML(vehnuevo, "#ofertasVenta"));
+
+window.addEventListener('load', insertButtoms(vehnuevo.length, "#botonesVenta"));
