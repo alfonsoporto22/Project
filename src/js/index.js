@@ -28,7 +28,7 @@ const vehiculos = [
 
 
 
-function data2HTML(marca, modelo, precio, km, img, portada) {
+function dataHTML(marca, modelo, precio, km, img, portada) {
     let portadaHTML = portada ? "active" : "";
     let urlImg="img/"+img;
     const taskHTML = `
@@ -46,19 +46,20 @@ function data2HTML(marca, modelo, precio, km, img, portada) {
     return taskHTML
 }
 
-function taskListHTML() {
+function taskListHTML(taskArray) {
     let HTMLtext = "";
-    for (let item of vehiculos) {
-        const HTMLelemento = data2HTML(item.marca, item.modelo, item.precio, item.km, item.img, item.portada)
+    for (let item of taskArray) {
+        const HTMLelemento = dataHTML(item.marca, item.modelo, item.precio, item.km, item.img, item.portada)
         HTMLtext += HTMLelemento;
     }
     return HTMLtext
 }
 
-function insertTasksHTML() {
-    const div = document.querySelector("#tasksList");
-    div.innerHTML = taskListHTML();
+function insertTasksHTML(taskArray, element) {
+    const div = document.querySelector(element);
+    div.innerHTML = taskListHTML(taskArray);
 }
 
+taskListHTML(vehiculos);
 
-window.addEventListener('load', insertTasksHTML)
+window.addEventListener('load', insertTasksHTML(vehiculos, "#ofertasVenta"))
